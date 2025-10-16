@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  ctf-app:
+    build:
+      context: ./ctf-app
+    container_name: ctf-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./ctf-app/uploads:/app/uploads
+    restart: unless-stopped
+
+  ctfd:
+    image: ctfd/ctfd:latest
+    container_name: ctfd
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ctfd-data:/opt/CTFd/uploads
+    restart: unless-stopped
