@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"  # dossier où se trouve requirements.txt
+    schedule:
+      interval: "daily"
